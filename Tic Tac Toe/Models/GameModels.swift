@@ -5,7 +5,7 @@
 //  Created by Iris GalGal on 21/03/23.
 //
 
-import UIKit
+import SwiftUI
 
 enum GameType{
     case single, bot, peer, undertemined
