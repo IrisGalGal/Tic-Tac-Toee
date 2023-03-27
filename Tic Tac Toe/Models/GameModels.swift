@@ -26,7 +26,7 @@ enum GameType{
 enum GamePiece: String{
     case x,o
     var image : Image{
-        image(self.rawValue)
+        Image(self.rawValue)
     }
 }
 
