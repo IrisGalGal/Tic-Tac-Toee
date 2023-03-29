@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F03DED0429D4F9E500CE88F0 /* YourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DED0329D4F9E500CE88F0 /* YourNameView.swift */; };
 		F04E442729C533D500D02AFA /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E442629C533D500D02AFA /* AppEntry.swift */; };
 		F04E442929C533D500D02AFA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E442829C533D500D02AFA /* StartView.swift */; };
 		F04E442B29C533D500D02AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04E442A29C533D500D02AFA /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F03DED0329D4F9E500CE88F0 /* YourNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNameView.swift; sourceTree = "<group>"; };
 		F04E442329C533D500D02AFA /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04E442629C533D500D02AFA /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		F04E442829C533D500D02AFA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				F04E442629C533D500D02AFA /* AppEntry.swift */,
 				F04E442829C533D500D02AFA /* StartView.swift */,
+				F03DED0329D4F9E500CE88F0 /* YourNameView.swift */,
 				F0715FB129D1337900DE6A5C /* Game Screen */,
 				F06512F629CA7EE2005F122B /* Models */,
 				F0715FAE29D1214800DE6A5C /* Utilities */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03DED0429D4F9E500CE88F0 /* YourNameView.swift in Sources */,
 				F0715FF429D257F700DE6A5C /* GameService.swift in Sources */,
 				F04E442929C533D500D02AFA /* StartView.swift in Sources */,
 				F06512F829CA7EF4005F122B /* GameModels.swift in Sources */,
