@@ -14,8 +14,10 @@ class GameService: ObservableObject{
     @Published var possibleMoves = Move.all
     @Published var gameOver = false
     @Published var gameBoard = GameSquare.reset
+    @Published var isThinking = false
     
     var gameType = GameType.single
+    
     var currentPlayer: Player{
         if player1.isCurrent{
             return player1
@@ -27,9 +29,11 @@ class GameService: ObservableObject{
     var gameStarted: Bool{
         player1.isCurrent || player2.isCurrent
     }
+    
     var boardDisabled: Bool{
         gameOver || !gameStarted
     }
+     
     func setupGame(gameType: GameType, player1Name: String, player2Name: String){
         switch gameType {
         case .single:
@@ -45,6 +49,7 @@ class GameService: ObservableObject{
         }
         player1.name = player1Name
     }
+    
     func reset(){
         player1.isCurrent = false
         player2.isCurrent = false
@@ -54,6 +59,7 @@ class GameService: ObservableObject{
         possibleMoves = Move.all
         gameBoard = GameSquare.reset
     }
+    
     func updateMoves(index: Int){
         if player1.isCurrent{
             player1.moves.append(index + 1)
@@ -63,15 +69,18 @@ class GameService: ObservableObject{
             gameBoard[index].player = player2
         }
     }
+    
     func checkIfWiner(){
         if player1.isWinner || player2.isWinner{
             gameOver = true
         }
     }
+    
     func toggleCurrent(){
         player1.isCurrent.toggle()
         player2.isCurrent.toggle()
     }
+    
     func makeMove(at index: Int){
         if gameBoard[index].player == nil{
             withAnimation {
@@ -83,10 +92,25 @@ class GameService: ObservableObject{
                     possibleMoves.remove(at: matchingIndex)
                 }
                 toggleCurrent()
+                if gameType == .bot && currentPlayer.name == player2.name{
+                    Task{
+                        await deviceMode()
+                    }
+                }
             }
             if possibleMoves.isEmpty{
                 gameOver = true
             }
         }
+    }
+    func deviceMode() async{
+        isThinking.toggle()
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        if let move = possibleMoves.randomElement(){
+            if let matchingIndex = Move.all.firstIndex(where: {$0 == move}){
+                makeMove(at: matchingIndex)
+            }
+        }
+        isThinking.toggle()
     }
 }

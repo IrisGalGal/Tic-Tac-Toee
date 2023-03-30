@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartView: View {
     @EnvironmentObject var game: GameService
+    @StateObject var connectionManager: MPConnectionManager
     @State private var gameType: GameType = .undertemined
     @AppStorage("yourName") var yourName = ""
     @State private var opponentName = ""
@@ -16,9 +17,12 @@ struct StartView: View {
     @State private var startGame = false
     @State private var changeName = false
     @State private var newName = ""
+    
     init(yourName: String){
         self.yourName = yourName
+        _connectionManager = StateObject(wrappedValue: MPConnectionManager(yourName: yourName))
     }
+    
     var body: some View {
         VStack {
             Picker("Select Game", selection: $gameType) {
@@ -30,8 +34,10 @@ struct StartView: View {
             .padding()
             .background(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(lineWidth: 2))
             .accentColor(.primary)
+            
             Text(gameType.description)
                 .padding()
+            
             VStack{
                 switch gameType{
                 case .single:
@@ -44,7 +50,8 @@ struct StartView: View {
                     }
                 case .peer:
                     VStack{
-                        EmptyView()
+                        MPPeersView(startGame: $startGame)
+                            .environmentObject(connectionManager)
                     }
                 case .undertemined:
                     VStack{
@@ -79,6 +86,7 @@ struct StartView: View {
         .navigationTitle("TIC TAC TOE")
         .fullScreenCover(isPresented: $startGame, content: {
             GameView()
+                .environmentObject(connectionManager)
         })
         .alert("Change Name",isPresented: $changeName, actions: {
             TextField("New name", text: $newName)

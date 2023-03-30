@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02BDB4C29D5FDC3002F1D47 /* MPPeersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BDB4B29D5FDC3002F1D47 /* MPPeersView.swift */; };
 		F03DED0429D4F9E500CE88F0 /* YourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DED0329D4F9E500CE88F0 /* YourNameView.swift */; };
+		F03DED0829D5086500CE88F0 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DED0729D5086500CE88F0 /* MPConnectionManager.swift */; };
 		F04E442729C533D500D02AFA /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E442629C533D500D02AFA /* AppEntry.swift */; };
 		F04E442929C533D500D02AFA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E442829C533D500D02AFA /* StartView.swift */; };
 		F04E442B29C533D500D02AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04E442A29C533D500D02AFA /* Assets.xcassets */; };
@@ -19,6 +21,7 @@
 		F071605E29D3E23F00DE6A5C /* GameSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071605D29D3E23F00DE6A5C /* GameSquare.swift */; };
 		F071606029D3E49C00DE6A5C /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071605F29D3E49C00DE6A5C /* SquareView.swift */; };
 		F071954129CA772900D65C9B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F071954029CA772900D65C9B /* Launch Screen.storyboard */; };
+		F08F379729D56025003DB60E /* MPGameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F379629D56025003DB60E /* MPGameMove.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F02BDB4B29D5FDC3002F1D47 /* MPPeersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPPeersView.swift; sourceTree = "<group>"; };
 		F03DED0329D4F9E500CE88F0 /* YourNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNameView.swift; sourceTree = "<group>"; };
+		F03DED0529D507CF00CE88F0 /* Tic-Tac-Toe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tic-Tac-Toe-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F03DED0729D5086500CE88F0 /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
 		F04E442329C533D500D02AFA /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04E442629C533D500D02AFA /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		F04E442829C533D500D02AFA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,7 @@
 		F071605D29D3E23F00DE6A5C /* GameSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSquare.swift; sourceTree = "<group>"; };
 		F071605F29D3E49C00DE6A5C /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		F071954029CA772900D65C9B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F08F379629D56025003DB60E /* MPGameMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPGameMove.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F03DED0629D5084000CE88F0 /* MultiPeerConectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F03DED0729D5086500CE88F0 /* MPConnectionManager.swift */,
+				F08F379629D56025003DB60E /* MPGameMove.swift */,
+				F02BDB4B29D5FDC3002F1D47 /* MPPeersView.swift */,
+			);
+			path = MultiPeerConectivity;
+			sourceTree = "<group>";
+		};
 		F04E441A29C533D500D02AFA = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +119,11 @@
 		F04E442529C533D500D02AFA /* Tic Tac Toe */ = {
 			isa = PBXGroup;
 			children = (
+				F03DED0529D507CF00CE88F0 /* Tic-Tac-Toe-Info.plist */,
 				F04E442629C533D500D02AFA /* AppEntry.swift */,
 				F04E442829C533D500D02AFA /* StartView.swift */,
 				F03DED0329D4F9E500CE88F0 /* YourNameView.swift */,
+				F03DED0629D5084000CE88F0 /* MultiPeerConectivity */,
 				F0715FB129D1337900DE6A5C /* Game Screen */,
 				F06512F629CA7EE2005F122B /* Models */,
 				F0715FAE29D1214800DE6A5C /* Utilities */,
@@ -281,12 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08F379729D56025003DB60E /* MPGameMove.swift in Sources */,
 				F03DED0429D4F9E500CE88F0 /* YourNameView.swift in Sources */,
 				F0715FF429D257F700DE6A5C /* GameService.swift in Sources */,
 				F04E442929C533D500D02AFA /* StartView.swift in Sources */,
 				F06512F829CA7EF4005F122B /* GameModels.swift in Sources */,
 				F04E442729C533D500D02AFA /* AppEntry.swift in Sources */,
 				F0715FB029D1218200DE6A5C /* ViewModifiers.swift in Sources */,
+				F02BDB4C29D5FDC3002F1D47 /* MPPeersView.swift in Sources */,
+				F03DED0829D5086500CE88F0 /* MPConnectionManager.swift in Sources */,
 				F0715FB329D133B200DE6A5C /* GameView.swift in Sources */,
 				F071605E29D3E23F00DE6A5C /* GameSquare.swift in Sources */,
 				F071606029D3E49C00DE6A5C /* SquareView.swift in Sources */,
@@ -446,6 +468,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tic Tac Toe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tic-Tac-Toe-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Would like to play tic tac toe";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -475,6 +499,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tic Tac Toe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tic-Tac-Toe-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Would like to play tic tac toe";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
